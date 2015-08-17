@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Teachers</h1>
+
+  <div class="row">
+    <% @teachers.each do |teachers| %>
+      <div class="col-md-4">
+       <div class="panel panel-default">
+        <div class="panel-body">
+         <h2><%= teachers.name %></h2>
+         <h3><%= teachers.salary %></h3>
+         <p><%= teachers.country %></p>
+         </div>
+       </div>
+     </div>
+   </div>  
+
+  <tbody>
+   
+      <tr>
+        <td><%= teachers.name %></td>
+        <td><%= teachers.salary %></td>
+        <td><%= teachers.country %></td>
+        <td><%= link_to 'Show', teachers %></td>
+        <td><%= link_to 'Edit', edit_teacher_path(teachers) %></td>
+        <td><%= link_to 'Destroy', teachers, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Teacher', new_teacher_path %>
